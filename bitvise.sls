@@ -2,7 +2,7 @@
 {% set PROGRAM_FILES = "%ProgramFiles%" %}
 bitvise:
   '7.31':
-    full_name: 'Bitvise SSH Client 5.31'
+    full_name: 'Bitvise SSH Client 7.31'
     installer: 'https://bvdl.s3-eu-west-1.amazonaws.com/BvSshClient-Inst.exe'
     uninstaller: ''
     install_flags: '-force -acceptEULA'
