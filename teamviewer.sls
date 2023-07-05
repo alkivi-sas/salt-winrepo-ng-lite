@@ -4,7 +4,7 @@ teamviewer:
     full_name: 'TeamViewer 15 Host'
     installer: salt://files/TeamViewer_Host_15.msi
     uninstaller: salt://files/TeamViewer_Host_15.msi
-    install_flags: '/qn /norestart CUSTOMCONFIGID={{ salt['pillar.get']('teamviewer:config_id')}} APITOKEN={{ salt['pillar.get']('teamviewer:api_token') }} ASSIGNMENTOPTIONS="--alias {{ grains.get('id')} --group {{ salt['pillar.get']('customer', 'FreshInstall') }} --grant-easy-access --reassign"'
+    install_flags: '/qn /norestart CUSTOMCONFIGID={{ salt['pillar.get']('teamviewer:config_id')}} APITOKEN={{ salt['pillar.get']('teamviewer:api_token') }} ASSIGNMENTOPTIONS="--alias {{ grains.get('id') }} --group {{ salt['pillar.get']('customer', 'FreshInstall') }} --grant-easy-access --reassign"'
     uninstall_flags: '/qn /norestart'
     msiexec: True
     reboot: False
