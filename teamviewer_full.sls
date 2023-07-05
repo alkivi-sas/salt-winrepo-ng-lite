@@ -1,5 +1,5 @@
 # both 32-bit (x86) AND a 64-bit (AMD64) installer available
-teamviewer:
+teamviewer_full:
   '15.12.4.0':
     full_name: 'TeamViewer 15 Full'
     installer: salt://files/TeamViewer_Full_15.msi
