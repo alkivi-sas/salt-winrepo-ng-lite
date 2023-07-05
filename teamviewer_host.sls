@@ -1,6 +1,6 @@
 # both 32-bit (x86) AND a 64-bit (AMD64) installer available
 teamviewer_host:
-  '15.12.4.0':
+  'latest':
     full_name: 'TeamViewer Host'
     installer: salt://files/TeamViewer_Host_15.msi
     uninstaller: salt://files/TeamViewer_Host_15.msi
