@@ -9,7 +9,7 @@ teamviewer_host:
     msiexec: True
     reboot: False
   '14.1.3399.0':
-    full_name: 'TeamViewer Host'
+    full_name: 'TeamViewer 14 Host'
     installer: salt://files/TeamViewer_Host_14.msi
     uninstaller: salt://files/TeamViewer_Host_14.msi
     install_flags: '/qn /norestart CUSTOMCONFIGID={{ salt['pillar.get']('teamviewer:config_id')}} APITOKEN={{ salt['pillar.get']('teamviewer:api_token') }} ASSIGNMENTOPTIONS="--group {{ salt['pillar.get']('customer') }} --grant-easy-access --reassign"'
