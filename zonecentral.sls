@@ -5,7 +5,7 @@ zonecentral:
   '2023.3':
     full_name: 'ZONECENTRAL'
     installer: salt://files/zonecentral.msi
-    install_flags: '/qn PX_EXTLICKEY={{ licence }} PX_INSTALLSO={{ install_admin_tool }}'
+    install_flags: '/qn PX_EXTLICKEY={{ license }} PX_INSTALLSO={{ install_admin_tool }}'
     uninstaller: '{00000004-9830-4CA8-8868-36F59DEFD14D}'
     uninstall_flags: '/qn /norestart'
     msiexec: True
