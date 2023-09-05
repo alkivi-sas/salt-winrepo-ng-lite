@@ -5,7 +5,7 @@ orizon:
   '2023.3':
     full_name: 'ORIZON'
     installer: salt://files/orizon.msi
-    install_flags: '/qn PX_EXTLICKEY={{ license }} PX_INSTALLSO={{ install_admin_tool }}'
+    install_flags: '/qn PX_EXTLICKEY={{ license }} PX_INSTALLSO={{ install_admin_tool }} /norestart'
     uninstaller: '{00000005-9830-ECA8-8868-36F59DEFD14D}'
     uninstall_flags: '/qn /norestart'
     msiexec: True
