@@ -114,9 +114,9 @@ salt-minion-py3:
     installer: 'https://repo.saltproject.io/salt/py3/windows/minor/{{ version }}/Salt-Minion-{{ version }}-Py3-x86-Setup.exe'
     {% endif -%}
     {% raw -%}
-    # install_flags: "/S /master={{ salt['pillar.get']('salt:master', 'salt.domain.tld') }} /minion-id={{ salt['pillar.get']('salt:minion:ids:' ~ grains['host'] }}"
+    # install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
     {% endraw -%}
-    install_flags: '/S'
+    install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
     uninstaller: '{{ install_dir }}\uninst.exe'
     uninstall_flags: '/S'
     msiexec: False
@@ -134,9 +134,9 @@ salt-minion-py3:
     installer: 'https://repo.saltproject.io/windows/Salt-Minion-{{ version }}-Py3-x86-Setup.exe'
     {% endif -%}
     {% raw -%}
-    # install_flags: "/S /master={{ salt['pillar.get']('salt:master', 'salt.domain.tld') }} /minion-id={{ salt['pillar.get']('salt:minion:ids:' ~ grains['host'] }}"
+    # install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
     {% endraw -%}
-    install_flags: '/S'
+    install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
     uninstaller: '{{ install_dir }}\uninst.exe'
     uninstall_flags: '/S'
     msiexec: False
