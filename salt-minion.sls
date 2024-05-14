@@ -13,15 +13,16 @@
 # Starting in Version 3006 salt standardized builds across all OSes on the
 # Relative Environment for Python project (relenv). The url changed as a result
 {%- load_yaml as versions_relenv %}
-- 3006.3
-- 3006.2
+- 3007.0
+- 3006.8
+- 3006.7
+- 3006.6
 {%- endload %}
 
 # Starting in Version 3004 salt is installed in ProgramData by default
 # The uninstaller will be in ProgramData\Salt Project\Salt
 {%- load_yaml as versions_classic %}
-- 3005.3
-- 3005.2
+- 3005.5
 {%- endload %}
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,8 +33,15 @@
 # correctly in `pkg.list_pkgs` and to allow for removal using `pkg.remove`
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {%- load_yaml as versions_cve %}
+- 3006.5
+- 3006.4
+- 3006.3
+- 3006.2
 - 3006.1
 - 3006.0
+- 3005.4
+- 3005.3
+- 3005.2
 - 3005.1-5
 - 3005.1-4
 - 3005.1-3
@@ -114,9 +122,9 @@ salt-minion-py3:
     installer: 'https://repo.saltproject.io/salt/py3/windows/minor/{{ version }}/Salt-Minion-{{ version }}-Py3-x86-Setup.exe'
     {% endif -%}
     {% raw -%}
-    # install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
+    # install_flags: "/S /master={{ salt['pillar.get']('salt:master', 'salt.domain.tld') }} /minion-id={{ salt['pillar.get']('salt:minion:ids:' ~ grains['host'] }}"
     {% endraw -%}
-    install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
+    install_flags: '/S'
     uninstaller: '{{ install_dir }}\uninst.exe'
     uninstall_flags: '/S'
     msiexec: False
@@ -134,9 +142,9 @@ salt-minion-py3:
     installer: 'https://repo.saltproject.io/windows/Salt-Minion-{{ version }}-Py3-x86-Setup.exe'
     {% endif -%}
     {% raw -%}
-    # install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
+    # install_flags: "/S /master={{ salt['pillar.get']('salt:master', 'salt.domain.tld') }} /minion-id={{ salt['pillar.get']('salt:minion:ids:' ~ grains['host'] }}"
     {% endraw -%}
-    install_flags: "/S /master={{ salt['grains.get']('master', 'salt.domain.tld') }} /minion-id={{ salt['grains.get']('ids') }}"
+    install_flags: '/S'
     uninstaller: '{{ install_dir }}\uninst.exe'
     uninstall_flags: '/S'
     msiexec: False
