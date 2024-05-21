@@ -9,6 +9,6 @@ hurukai-agent:
     full_name: 'HarfangLab Hurukai agent'
     installer: salt://files/hurukai-agent.3.7.8.msi
     install_flags: '/qn HOST={{ host }} PORT={{ port }} PROTO={{ proto }} SRV_SIG_PUB={{ srv_sig_pub }} PASSWORD={{ password }}'
-    uninstaller: salt://files/hurukai-agent.3.7.8.msi
+    uninstaller: '{B3EE5BFE-D0D4-4E35-92E4-8CE35BECB51B}'
     uninstall_flags: '/qn /norestart'
     msiexec: True
