@@ -8,7 +8,7 @@ teamviewer_host:
     uninstall_flags: '/qn /norestart'
     msiexec: True
     reboot: False
-  '15.62.4':
+  '15.62.4.0':
     full_name: 'TeamViewer Host'
     installer: salt://files/TeamViewer_Host_15.msi
     uninstaller: salt://files/TeamViewer_Host_15.msi
