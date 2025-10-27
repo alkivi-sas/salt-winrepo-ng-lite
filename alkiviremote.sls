@@ -8,3 +8,11 @@ alkiviremote:
     uninstall_flags: '/qn /norestart'
     msiexec: True
     reboot: False
+  '1.4.3.29359586':
+    full_name: 'AlkiviRemote'
+    installer: salt://files/alkiviremote.msi
+    uninstaller: salt://files/alkiviremote.msi
+    install_flags: '/qn /norestart CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N"'
+    uninstall_flags: '/qn /norestart'
+    msiexec: True
+    reboot: False
