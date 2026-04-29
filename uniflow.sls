@@ -4,7 +4,7 @@ uniflow:
     full_name: 'uniFLOW SmartClient'
     installer: salt://files/uniflow.msi
     uninstaller: salt://files/uniflow.msi
-    install_flags: '/qn /norestart'
+    install_flags: '/qn /norestart SERVERADDRESS={{ salt['pillar.get']('uniflow:server_address') }}'
     uninstall_flags: '/qn /norestart'
     msiexec: True
     reboot: False
@@ -12,7 +12,7 @@ uniflow:
     full_name: 'uniFLOW SmartClient'
     installer: salt://files/uniflow.msi
     uninstaller: salt://files/uniflow.msi
-    install_flags: '/qn /norestart'
+    install_flags: '/qn /norestart SERVERADDRESS={{ salt['pillar.get']('uniflow:server_address') }}'
     uninstall_flags: '/qn /norestart'
     msiexec: True
     reboot: False
