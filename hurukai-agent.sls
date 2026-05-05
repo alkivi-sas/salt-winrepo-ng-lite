@@ -3,8 +3,16 @@
 {% set proto = salt['pillar.get']('hurukai-agent:proto', 'https') %}
 {% set srv_sig_pub = salt['pillar.get']('hurukai-agent:srv_sig_pub', 'AAAA-AAAA-AAAA-AAAA-AAAA') %}
 {% set password = salt['pillar.get']('hurukai-agent:password', 'AAAA-AAAA-AAAA-AAAA-AAAA') %}
+{% set enrollment_token = salt['pillar.get']('hurukai-agent:enrollment_token', 'AAAA-AAAA-AAAA-AAAA-AAAA') %}
 
 hurukai-agent:
+  '5.7.29':
+    full_name: 'HarfangLab Hurukai agent'
+    installer: salt://files/hurukai-agent.5.7.29.msi
+    install_flags: '/qn HOST={{ host }} PORT={{ port }} PROTO={{ proto }} SRV_SIG_PUB={{ srv_sig_pub }} ENROLLMENT_TOKEN={{ enrollment_token }}'
+    uninstaller: '{B3EE5BFE-D0D4-4E35-92E4-8CE35BECB51B}'
+    uninstall_flags: '/qn /norestart'
+    msiexec: True
   '3.7.8':
     full_name: 'HarfangLab Hurukai agent'
     installer: salt://files/hurukai-agent.3.7.8.msi
