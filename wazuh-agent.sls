@@ -1,4 +1,4 @@
-{% set wazuh_config = __pillar__.get('wazuh_config', {}) %}
+{% set wazuh_config = salt["pillar.get"]("wazuh_config", {}) %}
 {# TO check https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/deployment-variables/deployment-variables-windows.html #}
 {% set wazuh_agent_name = wazuh_config.get("agent", grains.get("id")) %}
 {% set wazuh_manager = wazuh_config.get("manager", None) %}
